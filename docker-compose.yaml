@@ -1,0 +1,15 @@
+# vim:ft=ansible:
+version: '3'
+services:
+  phppgadmin713-ubuntu2204:
+    build:
+      context: ./7.13/ubuntu-22.04/
+      dockerfile: Dockerfile
+    image: solusik8s/phppgadmin:7.13-ubuntu-22.04
+    ports:
+      - 8080:80
+    environment:
+      DATABASE_DESC: PostgreSQL
+      DATABASE_HOST: localhost
+      DATABASE_PORT: 5432
+      DATABASE_SSLMODE: allow
